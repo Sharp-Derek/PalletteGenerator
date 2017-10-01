@@ -1,0 +1,44 @@
+body {
+  background:grey;
+margin:0;
+}
+main {
+  position:relative;
+  padding-top:100px;
+}
+header {
+  background:white;
+  border-bottom: 2px solid black;
+  padding: 10px 0;
+}
+header h1 {
+  margin:0;
+}
+#options-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background:#cccccc;
+  text-align: right;
+  padding:10px 20px 20px;
+}
+#options-box h3 {
+  text-align: center;
+}
+#options-box .color-preview {
+  width:100px;
+  height:100px;
+  border: 1px solid black;
+  margin: auto;
+}
+.color-grid {
+  margin:auto;
+  background:#333333;
+  border-collapse: collapse;
+}
+.color-grid td {
+  width:20px;
+  height:20px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
