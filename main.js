@@ -3,6 +3,8 @@ var gridHeight;
 var gridWidth;
 var stylesheet = document.createElement("style");
 var styleRules = stylesheet.innerHTML;
+var tooltip = document.getElementById("tooltip");
+var toolValue = tooltip.querySelector("#value");
 document.head.appendChild(stylesheet);
 
 function SetGrid() {
@@ -48,6 +50,10 @@ function setColor(obj,cH,cS,cL, doDelete) {
     obj.setAttribute("H",cH);
     obj.setAttribute("S",cS);
     obj.setAttribute("L",cL);
+    if (obj.className != "color-preview") {
+      obj.onmouseover = DisplayToolTip;
+      obj.onmouseleave = HideToolTip;
+    }
 }
 
 function DrawColor() {
@@ -118,4 +124,16 @@ function setHue(value) {
 function ResetStylesheet() {
   stylesheet.innerHTML = "";
   setPreviewColor();
+}
+
+function DisplayToolTip() {
+  tooltip.style.display = "block";
+  this.appendChild(tooltip);
+  var curH = this.getAttribute("H");
+  var curS = this.getAttribute("S");
+  var curL = this.getAttribute("L");
+  toolValue.innerHTML = "HSL: " + curH + ", " + curS + ", " + curL;
+}
+function HideToolTip() {
+  tooltip.style.display = "none";
 }
