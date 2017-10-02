@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <header>
+      <h1>PALETTE GENERATOR</h1>
+    </header>
+    <main>
+      <div id="options-box">
+        <div class="grid-options">
+          <h3>OPTIONS</h3>
+          Width: <input type="number" name="color-grid-width" min="0" value="10" onchange="SetGrid()"><br>
+          Height: <input type="number" name="color-grid-height" min="0" value="10" onchange="SetGrid()"><br>
+        </div>
+        <div class="color-options">
+          <h3>DRAW COLOR</h3>
+          <!--Hex: #<input type="text" name="color-hex" value="ff0000" maxlength="6"><br>
+          RGB: R<input type="number" name="color-R" value="255" min="0" max="255">
+          G<input type="number" name="color-R" value="0" min="0" max="255">
+          B<input type="number" name="color-R" value="0" min="0" max="255"><br>-->
+          HSL: H<input type="number" name="color-H" value="0" min="0" max="360" onchange="setPreviewColor()">
+          S<input type="number" name="color-S" value="100" min="0" max="100" onchange="setPreviewColor()">%
+          L<input type="number" name="color-L" value="50" min="0" max="100" onchange="setPreviewColor()">%<br>
+          <div class="color-preview"></div>
+          <button onclick="ResetStylesheet()">Reset Palette</button>
+      </div>
+    </div>
+      <table class="color-grid">
+      </table>
+      <div id="tooltip"><p class="corner"></p><p id="value">NO COLOR</p></div>
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+  </body>
+</html>
